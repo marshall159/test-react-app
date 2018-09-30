@@ -19,16 +19,21 @@
     <div id="react-container"></div> 
     <script type="text/babel">
 
-        const Banner = () => (
-            <div id="fancy">
-                <h1 className="heading">Welcome to React</h1>
-                <p>Have fun!</p>
-            </div>
-            
-        )
+        class Hello extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h1>Hello {this.props.firstName}</h1>
+                        <p>Learning React Version {this.props.version}</p>
+                    </div>
+                )
+            }
+        }
+
+        const HelloStateLess = ({firstName}) => <h1>Hello {firstName}</h1>
 
         ReactDOM.render(
-            <Banner/>, 
+            <HelloStateLess firstName="Aneel" version={16}/>, 
             document.getElementById('react-container')
         )
     </script>
